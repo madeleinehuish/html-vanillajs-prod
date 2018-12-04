@@ -30,7 +30,6 @@ for(let elem of htmlFiles) {
 module.exports = {
 	entry: {
 		home: './src/index.js',
-		test: './src/test.js',
 		dropdown: './src/js/dropdown.js',
 		getData: './src/js/getData.js',
 		getData2: './src/js/getData3.js',
@@ -64,72 +63,5 @@ module.exports = {
 			chunks: ['main']
 		}),
 		...htmlWebPackPluginArray
-		// // new HtmlWebpackPlugin({
-		// // 	filename: 'test.html',
-		// // 	template: 'src/test.html',
-		// // 	chunks: ['main']
-		// // }),
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/lists.html',
-		// 	template: 'src/pages/lists.html',
-		// 	chunks: ['main']
-		// }),
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/lists2.html',
-		// 	template: 'src/pages/lists2.html',
-		// 	chunks: ['main']
-		// }),
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/lists3.html',
-		// 	template: 'src/pages/lists3.html',
-		// 	chunks: ['main']
-		// }),
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/lists4.html',
-		// 	template: 'src/pages/lists4.html',
-		// 	chunks: ['main']
-		// }),
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/forms.html',
-		// 	template: 'src/pages/formClass.html',
-		// 	chunks: ['main']
-		// }),
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/forms2.html',
-		// 	template: 'src/pages/forms2.html',
-		// 	chunks: ['main']
-		// }),
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/forms3.html',
-		// 	template: 'src/pages/forms3.html',
-		// 	chunks: ['main'],
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/getData.html',
-		// 	template: 'src/pages/getData.html',
-		// 	chunks: ['main']
-		// }),
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/getData2.html',
-		// 	template: 'src/pages/getData2.html',
-		// 	chunks: ['main']
-		// }),
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/getData3.html',
-		// 	template: 'src/pages/getData3.html',
-		// 	chunks: ['main']
-		// }),
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/pokemon.html',
-		// 	template: 'src/pages/pokemon.html',
-		// 	chunks: ['main'],
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/pokemon.html',
-		// 	template: 'src/pages/trucks.html',
-		// 	chunks: ['main'],
-		// new HtmlWebpackPlugin({
-		// 	filename: 'pages/pokemon.html',
-		// 	template: 'src/pages/youTube.html',
-		// 	chunks: ['main']
-		// })
   ]
 }
