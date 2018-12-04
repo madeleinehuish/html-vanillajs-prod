@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../styles/style.css" />
+<link rel="icon" href="../styles/ganesh_favicon.png">
+<title>forms2 page</title>
+<style>
+
+form.mainForm {
+	width: 50%;
+	margin: 0 auto;
+}
+
+h4 {
+	margin-top: 20px;
+}
+
+fieldset {
+	margin-top: 20px;
+}
+
+p {
+	line-height: 1.5;
+}
+
+</style>
+</head>
+<body>
+	<h3 id="title">Madeleine's Vanilla JS <span id="homeSpan">Forms2</span> Page</h3>
+	<nav>
+		<div class="left-nav-container">
+			<ul>
+				<li><a href="../../index.html">home</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="../lists/lists.html">lists1</a></li>
+						<li class="innerList"><a href="../lists/lists2.html">lists2</a></li>
+						<li class="innerList"><a href="../lists/lists3.html">lists3</a></li>
+						<li class="innerList"><a href="../lists/lists4.html">lists4</a></li>
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">lists</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="../images/images.html">images</a></li>
+						<li class="innerList"><a href="../images/images2.html">images2</a></li>
+						<li class="innerList"><a href="../images/images3.html">images3</a></li>
+						<li class="innerList"><a href="../images/images4.html">images4</a></li>
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">images</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="../forms/forms.html">forms</a></li>
+						<!-- <li class="innerList"><a href="../forms/forms2.html">forms2</a></li> -->
+						<li class="innerList"><a href="../forms/forms3.html">forms3</a></li>
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">forms</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<!-- <li class="innerList"><a href="../getData/getData1.html">getData1</a></li> -->
+						<li class="innerList"><a href="../getData/getData2.html">getData2</a></li>
+						<li class="innerList"><a href="../getData/getData3.html">getData3</a></li>
+					</ul>
+				</li>
+        <li class="dropDownTrigger"><a href="#">getData</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="../api/pokemon/pokemon.html">pokemon</a></li>
+						<li class="innerList"><a href="../api/trucks/trucks.html">trucks</a></li>
+						<li class="innerList"><a href="../api/youtube/youTube.html">youTube</a></li>
+					</ul>
+				</li>
+        <li class="dropDownTrigger"><a href="#">API</a></li>
+			</ul>
+		</div>
+		<div class="right-nav-container">
+			<form>
+				<label for="searchBar">search</label>
+				<input type="search" class="searchInput" id="searchBar" name="search" />
+			</form>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="col col1"></div>
+		<div class="col col2"> </div>
+		<div class="col col3"> </div>
+	</div>
+	<div class="form-container">
+		<h4>Awesome DropDown Form (copied from MDN)</h4>
+		<!-- see https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/The_native_form_widgets -->
+		<form action="/forms" method="post" class="mainForm">
+			<fieldset>
+        <p>
+          <label for="simple">A simple select box:</label>
+          <select id="simple" name="simple">
+	          <option>Banana</option>
+	          <option>Cherry</option>
+	          <option>Lemon</option>
+          </select>
+        </p>
+        <p>
+          <label for="groups">Select box with option groups:</label>
+	        <select id="groups" name="groups">
+	          <optgroup label="fruits">
+	            <option>Banana</option>
+	            <option selected>Cherry</option>
+	            <option>Lemon</option>
+	          </optgroup>
+	          <optgroup label="vegetables">
+	            <option>Carrot</option>
+	            <option>Eggplant</option>
+	            <option>Potato</option>
+	          </optgroup>
+	        </select>
+        </p>
+        <p>
+          <label for="multi">Select box allowing multiple selections:</label>
+          <select multiple id="multi" name="multi">
+	          <option>Banana</option>
+	          <option>Cherry</option>
+	          <option>Lemon</option>
+          </select>
+        </p>
+        <p>
+          <label for="myFruit">What's your favorite fruit?</label>
+          <input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+          <datalist id="mySuggestion">
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Blackberry</option>
+            <option>Blueberry</option>
+            <option>Lemon</option>
+            <option>Lychee</option>
+            <option>Peach</option>
+            <option>Pear</option>
+          </datalist>
+        </p>
+        <p>
+          <label for="myFruit">What is your favorite fruit? (With fallback)</label>
+          <input type="text" id="myFruit" name="fruit" list="fruitList">
+          <datalist id="fruitList">   <label for="suggestion">or pick a fruit</label>
+            <select id="suggestion" name="altFruit">
+              <option>Apple</option>
+              <option>Banana</option>
+              <option>Blackberry</option>
+              <option>Blueberry</option>
+              <option>Lemon</option>
+              <option>Lychee</option>
+              <option>Peach</option>
+              <option>Pear</option>
+            </select>
+          </datalist>
+        </p>
+        <p>
+        <button type="submit">Submit me!</button>
+        </p>
+			</fieldset>
+    </form>
+	</div>
+	<!-- <script type="text/javascript" src="../../js/index.js"></script> -->
+	<script type="text/javascript" src="../js/dropdown.bundle.js"></script>
+</body>
+</html>

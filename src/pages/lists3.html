@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../styles/style.css" />
+<link rel="icon" href="../styles/ganesh_favicon.png">
+<title>Madeleine List3 Page</title>
+<style>
+
+#todoContainer {
+  width: 70%;
+  margin: 0 auto;
+}
+/* Remove margins and padding from the list */
+ul#myUL {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the list items */
+ul#myUL li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    display: block;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul#myUL li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul#myUL li:hover {
+    background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul#myUL li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul#myUL li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+/* Style the close button */
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+    background-color: #B4ABBF;
+    color: white;
+}
+
+/* Style the header */
+.header {
+    background-color: #B4ABBF;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the input */
+input#myInput {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 70%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+}
+
+.addBtn:hover {
+    background-color: #bbb;
+}
+</style>
+
+<title>JS DOM paragraph style</title>
+</head>
+<body>
+<h3 id="title">Madeleine's Vanilla JS <span id="homeSpan">Lists3</span> Page</h3>
+<nav>
+  <div class="left-nav-container">
+    <ul>
+      <li><a href="../../index.html">home</a></li>
+      <li class="dropDown">
+        <ul style="padding:0;">
+          <li class="innerList"><a href="lists.html">lists1</a></li>
+          <li class="innerList"><a href="lists2.html">lists2</a></li>
+          <li class="innerList"><a href="lists4.html">lists4</a></li>
+        </ul>
+      </li>
+      <li class="dropDownTrigger"><a href="#">lists</a></li>
+      <li class="dropDown">
+        <ul style="padding:0;">
+          <li class="innerList"><a href="../images/images.html">images</a></li>
+          <li class="innerList"><a href="../images/images2.html">images2</a></li>
+          <li class="innerList"><a href="../images/images3.html">images3</a></li>
+          <li class="innerList"><a href="../images/images4.html">images4</a></li>
+        </ul>
+      </li>
+      <li class="dropDownTrigger"><a href="#">images</a></li>
+      <li class="dropDown">
+        <ul style="padding:0;">
+          <li class="innerList"><a href="../forms/forms.html">forms</a></li>
+          <li class="innerList"><a href="../forms/forms2.html">forms2</a></li>
+          <li class="innerList"><a href="../forms/forms3.html">forms3</a></li>
+        </ul>
+      </li>
+      <li class="dropDownTrigger"><a href="#">forms</a></li>
+      <li class="dropDown">
+        <ul style="padding:0;">
+          <!-- <li class="innerList"><a href="../getData/getData1.html">getData1</a></li> -->
+          <li class="innerList"><a href="../getData/getData2.html">getData2</a></li>
+          <li class="innerList"><a href="../getData/getData3.html">getData3</a></li>
+        </ul>
+      </li>
+      <li class="dropDownTrigger"><a href="#">getData</a></li>
+      <li class="dropDown">
+        <ul style="padding:0;">
+          <li class="innerList"><a href="../api/pokemon/pokemon.html">pokemon</a></li>
+          <li class="innerList"><a href="../api/trucks/trucks.html">trucks</a></li>
+          <li class="innerList"><a href="../api/youtube/youTube.html">youTube</a></li>
+        </ul>
+      </li>
+      <li class="dropDownTrigger"><a href="#">API</a></li>
+    </ul>
+  </div>
+  <div class="right-nav-container">
+  	<form>
+  		<label for="listInput">search</label>
+  		<input id="listInput" name="list" />
+  	</form>
+  </div>
+</nav>
+    <main>
+        <div class="container">
+    		<div class="col col1"></div>
+    		<div class="col col2"> </div>
+    		<div class="col col3"> </div>
+    	</div>
+    	<br />
+      <div id="todoContainer">
+        <div id="myDIV" class="header">
+          <h2 style="padding-bottom: 20px">My To Do List</h2>
+          <input type="text" id="myInput" placeholder="Title...">
+          <span onclick="newElement()" class="addBtn">Add</span>
+        </div>
+
+        <ul id="myUL">
+          <li>Study Vanilla JS</li>
+          <li>Work on Algorithms</li>
+          <li>React/Redux Study</li>
+          <li>Eat lunch</li>
+          <li>Get enough rest</li>
+          <li>Take a walk / get exercise</li>
+          <li class="checked">Example of a pre-checked one</li>
+        </ul>
+      </div>
+
+    </main>
+
+
+<!-- <script type="text/javascript" src="js/lists.js"></script> -->
+<script type="text/javascript" src="../js/dropdown.bundle.js"></script>
+<script>
+// this todo list inspired by https://www.w3schools.com/howto/howto_js_todolist.asp
+// Create a "close" button and append it to each list item
+const myNodelist = document.querySelectorAll("ul#myUL > li");
+
+for (let i = 0; i < myNodelist.length; i++) {
+  const span = document.createElement("SPAN");
+  const txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+let close = document.getElementsByClassName("close");
+
+for (let i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    let div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+let list = document.getElementById('myUL');
+list.addEventListener('click', function(ev) {
+  console.log('click event: ', ev);
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, true); // made this true as we have a container div around the ul
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  const li = document.createElement("li");
+  const inputValue = document.getElementById("myInput").value;
+  const t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  const span = document.createElement("SPAN");
+  const txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (let i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      let div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+</script>
+</body>
+</html>

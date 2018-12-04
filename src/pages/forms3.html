@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../styles/style.css" />
+<link rel="icon" href="../styles/ganesh_favicon.png">
+<title>forms3 page</title>
+<style>
+
+form.mainForm {
+	width:60%;
+	margin: 20px auto;
+}
+
+form li {
+	display: inline-block;
+	padding: 15px;
+}
+
+fieldset, h4 {
+	margin-top: 20px;
+}
+
+</style>
+</head>
+<body>
+	<h3 id="title">Madeleine's Vanilla JS <span id="homeSpan">Forms3</span> Page</h3>
+	<nav>
+		<div class="left-nav-container">
+			<ul>
+				<li><a href="../../index.html">home</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="../lists/lists.html">lists1</a></li>
+						<li class="innerList"><a href="../lists/lists2.html">lists2</a></li>
+						<li class="innerList"><a href="../lists/lists3.html">lists3</a></li>
+						<li class="innerList"><a href="../lists/lists4.html">lists4</a></li>
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">lists</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="../images/images.html">images</a></li>
+						<li class="innerList"><a href="../images/images2.html">images2</a></li>
+						<li class="innerList"><a href="../images/images3.html">images3</a></li>
+						<li class="innerList"><a href="../images/images4.html">images4</a></li>
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">images</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="../forms/forms.html">forms</a></li>
+						<li class="innerList"><a href="../forms/forms2.html">forms2</a></li>
+						<!-- <li class="innerList"><a href="../forms/forms3.html">forms3</a></li> -->
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">forms</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<!-- <li class="innerList"><a href="../getData/getData1.html">getData1</a></li> -->
+						<li class="innerList"><a href="../getData/getData2.html">getData2</a></li>
+						<li class="innerList"><a href="../getData/getData3.html">getData3</a></li>
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">getData</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="../api/pokemon/pokemon.html">pokemon</a></li>
+						<li class="innerList"><a href="../api/trucks/trucks.html">trucks</a></li>
+						<li class="innerList"><a href="../api/youtube/youTube.html">youTube</a></li>
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">API</a></li>
+			</ul>
+		</div>
+		<div class="right-nav-container">
+			<form>
+				<label for="searchBar">search</label>
+				<input type="search" class="searchInput" id="searchBar" name="search" />
+			</form>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="col col1"></div>
+		<div class="col col2"> </div>
+		<div class="col col3"> </div>
+	</div>
+	<div class="form-container">
+		<h4>Awesome Check Box Form (copied from MDN)</h4>
+		<!-- see https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/The_native_form_widgets -->
+		<form class="mainForm">
+        <fieldset>
+          <legend>Choose all the vegetables you like to eat</legend>
+          <ul>
+            <li>
+              <label for="carrots">Carrots</label>
+              <input type="checkbox" checked id="carrots" name="carrots" value="carrots">
+            </li>
+            <li>
+              <label for="peas">Peas</label>
+              <input type="checkbox" id="peas" name="peas" value="peas">
+            </li>
+            <li>
+              <label for="cabbage">Cabbage</label>
+              <input type="checkbox" id="cabbage" name="cabbage" value="cabbage">
+            </li>
+            <li>
+              <label for="cauli">Cauliflower</label>
+              <input type="checkbox" id="cauli" name="cauli" value="cauli">
+            </li>
+            <li>
+              <label for="broc">Broccoli</label>
+              <input type="checkbox" id="broc" name="broc" value="broc">
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>What is your favorite meal?</legend>
+          <ul>
+            <li>
+              <label for="soup">Soup</label>
+              <input type="radio" checked id="soup" name="meal" value="soup">
+            </li>
+            <li>
+              <label for="curry">Curry</label>
+              <input type="radio" id="curry" name="meal" value="curry">
+            </li>
+            <li>
+              <label for="pizza">Pizza</label>
+              <input type="radio" id="pizza" name="meal" value="pizza">
+            </li>
+            <li>
+              <label for="tacos">Tacos</label>
+              <input type="radio" id="tacos" name="meal" value="tacos">
+            </li>
+            <li>
+              <label for="bolognaise">Bolognaise</label>
+              <input type="radio" id="bolognaise" name="meal"  value="bolognaise">
+            </li>
+          </ul>
+        </fieldset>
+    </form>
+	</div>
+	<!-- <script type="text/javascript" src="../../js/index.js"></script> -->
+	<script type="text/javascript" src="../js/dropdown.bundle.js"></script>
+</body>
+</html>

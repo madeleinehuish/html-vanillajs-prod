@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../styles/style.css" />
+<link rel="icon" href="../styles/ganesh_favicon.png">
+<title>Madeleine List1 Page</title>
+<style>
+li {
+	display:inline;
+	font-size:24px;
+	margin-right: 20px;
+}
+</style>
+<title>JS DOM paragraph style</title>
+</head>
+<body>
+	<h3 id="title">Madeleine's Vanilla JS <span id="homeSpan">Lists</span> Page</h3>
+	<nav>
+		<div class="left-nav-container">
+			<ul>
+				<li><a href="../../index.html">home</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="lists2.html">lists2</a></li>
+						<li class="innerList"><a href="lists3.html">lists3</a></li>
+						<li class="innerList"><a href="lists4.html">lists4</a></li>
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">lists</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="forms.html">forms</a></li>
+						<li class="innerList"><a href="forms2.html">forms2</a></li>
+						<li class="innerList"><a href="forms3.html">forms3</a></li>
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">forms</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<!-- <li class="innerList"><a href="../getData/getData1.html">getData1</a></li> -->
+						<li class="innerList"><a href="getData2.html">getData2</a></li>
+						<li class="innerList"><a href="getData3.html">getData3</a></li>
+					</ul>
+				</li>
+        <li class="dropDownTrigger"><a href="#">getData</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="pokemon.html">pokemon</a></li>
+						<li class="innerList"><a href="trucks.html">trucks</a></li>
+						<li class="innerList"><a href="youTube.html">youTube</a></li>
+					</ul>
+				</li>
+        <li class="dropDownTrigger"><a href="#">API</a></li>
+			</ul>
+		</div>
+		<div class="right-nav-container">
+			<form>
+				<label for="listInput">search</label>
+				<input id="listInput" name="list" />
+			</form>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="col col1"></div>
+		<div class="col col2"> </div>
+		<div class="col col3"> </div>
+	</div>
+	<br />
+	<div style="text-align:center; padding-bottom: 20px;">
+		Type into the search bar to filter the array
+	</div>
+	<div id="list-container"></div>
+
+	<script type="text/javascript" src="../js/lists.bundle.js"></script>
+	<script type="text/javascript" src="../js/dropdown.bundle.js"></script>
+</body>
+</html>

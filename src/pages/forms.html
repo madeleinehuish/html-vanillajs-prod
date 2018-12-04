@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../styles/style.css" />
+<link rel="icon" href="../styles/ganesh_favicon.png">
+<title>forms page</title>
+<style>
+
+form.formClass {
+	display: inline-block;
+}
+
+form.formClass {
+	margin-right: 10px;
+}
+
+fieldset {
+	padding: 10px;
+}
+
+</style>
+</head>
+<body>
+	<h3 id="title">Madeleine's Vanilla JS <span id="homeSpan">Forms</span> Page</h3>
+	<nav>
+		<div class="left-nav-container">
+			<ul>
+				<li><a href="../index.html">home</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="./lists.html">lists1</a></li>
+						<li class="innerList"><a href="./lists2.html">lists2</a></li>
+						<li class="innerList"><a href="./lists3.html">lists3</a></li>
+						<li class="innerList"><a href="./lists4.html">lists4</a></li>
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">lists</a></li>
+				<!-- <li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="../images/images.html">images</a></li>
+						<li class="innerList"><a href="../images/images2.html">images2</a></li>
+						<li class="innerList"><a href="../images/images3.html">images3</a></li>
+						<li class="innerList"><a href="../images/images4.html">images4</a></li>
+					</ul>
+				</li> -->
+				<!-- <li class="dropDownTrigger"><a href="#">images</a></li> -->
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<!-- <li class="innerList"><a href="../forms/forms.html">forms</a></li> -->
+						<li class="innerList"><a href="./forms2.html">forms2</a></li>
+						<li class="innerList"><a href="./forms3.html">forms3</a></li>
+					</ul>
+				</li>
+				<li class="dropDownTrigger"><a href="#">forms</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<!-- <li class="innerList"><a href="../getData/getData1.html">getData1</a></li> -->
+						<li class="innerList"><a href="./getData2.html">getData2</a></li>
+						<li class="innerList"><a href="./getData3.html">getData3</a></li>
+					</ul>
+				</li>
+        <li class="dropDownTrigger"><a href="#">getData</a></li>
+				<li class="dropDown">
+					<ul style="padding:0;">
+						<li class="innerList"><a href="./pokemon.html">pokemon</a></li>
+						<li class="innerList"><a href="./trucks.html">trucks</a></li>
+						<li class="innerList"><a href="./youTube.html">youTube</a></li>
+					</ul>
+				</li>
+        <li class="dropDownTrigger"><a href="#">API</a></li>
+			</ul>
+		</div>
+		<div class="right-nav-container">
+			<form>
+				<label for="searchBar">search</label>
+				<input type="search" class="searchInput" id="searchBar" name="search" />
+			</form>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="col col1"></div>
+		<div class="col col2"> </div>
+		<div class="col col3"> </div>
+	</div>
+	<br />
+	<div class="form-container">
+		<h3>Awesome Forms</h3>
+		<form action="/forms" method="post" class="formClass">
+		<h3>regular form</h3>
+			<fieldset>
+				<div>
+					<label for="name" class="title">Name:</label>
+					<input type="text" id="name" name="name" />
+				</div>
+				<div>
+					<label for="email" class="title">Email:</label>
+					<input type="email" id="email" name="email" />
+				</div>
+				<div class="radio-buttons">
+					<span class="title">Gender:</span>
+					<input type="radio" name="gender" id="male" value="M" />
+					<label for="male">M</label>
+					<input type="radio" name="gender" id="female" value="F" />
+					<label for="female">F</label><br />
+				</div>
+				<div class="submit">
+					<input type="submit" value="Register" id="submitF" />
+				</div>
+			</fieldset>
+		</form>
+
+		<form id="postForm" class="formClass">
+		<h3>post form with xmlHTTP</h3>
+			<fieldset>
+				<div>
+					<label for="name2" class="title">Name:</label>
+					<input type="text" id="name2" name="name" />
+				</div>
+				<div>
+					<label for="email2" class="title">Email:</label>
+					<input type="email" id="email2" name="email" />
+				</div>
+				<div class="radio-buttons">
+					<span class="title">Gender:</span>
+					<input type="radio" name="gender" id="male2" value="M" />
+					<label for="male2">M</label>
+					<input type="radio" name="gender" id="female2" value="F" />
+					<label for="female2">F</label><br />
+				</div>
+				<div class="submit">
+					<input type="submit" value="Register" id="submitF2" />
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script>
+
+		let form = document.getElementById('postForm');
+		let nameInForm = document.getElementById('name2');
+		let emailInForm = document.getElementById('email2');
+		let genderInForm = document.getElementsByName('gender');
+
+
+		form.addEventListener('submit', function() {
+			let name = nameInForm.value;
+			let email = emailInForm.value;
+			let gender = '';
+			for(let selection of genderInForm) {
+				if (selection.checked) gender = selection.value;
+			}
+			let sendObject = { name, email, gender };
+			postData(sendObject);
+		}, true);
+
+		function postData(data) {
+			let xhr = new XMLHttpRequest();
+			xhr.open('POST', '/forms', true);
+			xhr.setRequestHeader('Content-Type', 'application/json')
+			xhr.onreadystatechange = () => {
+				if(xhr.readyState === 4 && xhr.status === 200) {
+					console.log('form response: ', xhr.responseText);
+				}
+			}
+			xhr.send(JSON.stringify(data));
+		}
+
+	</script>
+	<script type="text/javascript" src="../js/dropdown.bundle.js"></script>
+</body>
+</html>

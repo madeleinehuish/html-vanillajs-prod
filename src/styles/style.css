@@ -1,0 +1,161 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	background-color:#ecf5f3;
+}
+
+h3#title {
+	margin: 20px 0 15px 150px;
+	color: purple;
+	/* margin-left: 140px; */
+}
+
+nav {
+	/* margin-top: 20px; */
+}
+
+/* links */
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-shadow: 0 1px 1px;
+}
+
+a:visited {
+	color:none;
+}
+
+.currentVisited {
+	color:purple;
+}
+
+/* drop down  */
+.dropDown {
+	display:none;
+	/*  76.23 x 29 */
+	/* height:100px; */
+	/* width: 76.23px; */
+	line-height:1.5;
+	width: 90px;
+	position:absolute;
+	top:100px;
+	border: 2px solid #bcf5bc;
+	background-color: #dbece8
+}
+.dropDownTrigger {
+	position:relative;
+}
+.innerList{
+	font-size: 20px;
+	line-height:1.5;
+}
+
+/* containers */
+div.container {
+	width: 100%;
+}
+
+div.left-nav-container {
+	width:75%;
+	height: 50px;
+	float:left;
+}
+
+div.right-nav-container {
+	width:15%;
+	height: 50px;
+	margin-top: -20px;
+	float:left;
+}
+
+.container, .container2 {
+	overflow: auto;
+	width:100%;
+}
+
+.col1 {
+	background-color:#a50000;
+	float:left;
+	width:33%;
+	height:50px;
+	margin:0 .20% 0 .30%;
+}
+
+.col2 {
+	background-color:#3c744b;
+	float:left;
+	width:33%;
+	height:50px;
+	margin:0 .30% 0 0;
+}
+
+.col3 {
+	background-color:pink;
+	float:left;
+	width:33%;
+	height:50px;
+	margin:0 .20% 0 0;
+}
+
+.col1a, .col2a, .col3a {
+	float: left;
+	width: 33%;
+	text-align: center;
+}
+
+/* forms and lists */
+form {
+	margin-top: 20px;
+}
+
+label {
+	font-size: 24px;
+	padding-top:3px;
+}
+
+ul {
+	text-align: center;
+}
+
+nav ul {
+	text-align: left;
+	padding-left: 150px;
+}
+
+nav * {
+	z-index: 2;
+}
+
+nav li {
+	display:inline;
+	font-size:24px;
+	margin-right: 18px;
+}
+
+input.searchInput {
+	height: 28px;
+	padding-bottom: 3px;
+
+}
+
+/* miscellaneous */
+div.table-container, div.form-container, div.modal, div.img-container, div#openModalContainer, div#startOverButtonContainer, .col2 {
+	text-align: center;
+}
+
+button {
+	cursor: pointer;
+	padding: 4px;
+	border-radius: 1;
+}
+
+#homeSpan {
+	color:#b947d1;
+}
