@@ -1,0 +1,1 @@
+This is a continuation of practice Vanilla JS, HTML, and CSS on a basic multi page app that I worked on over the summer as preparation for the Amazon interview. The original repository was html-vanillajs-practice. I've updated the links and am making it production ready with Webpack 4 to work on my bundling and deployment skills with multipage apps.
