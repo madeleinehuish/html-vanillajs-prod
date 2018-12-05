@@ -11,19 +11,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
 
-if (process.env.NODE_ENV !== 'production') {
-	const webpack = require('webpack');
-	const webpackDevMiddleware = require('webpack-dev-middleware');
-	const config = require('./webpack.config.js');
-	const compiler = webpack(config);
-
-	app.use(webpackDevMiddleware(compiler, {
-		publicPath: config.output.publicPath
-	}));
-} else {
-	app.use(express.static(__dirname + "/dist"));
-}
-
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true })); //need this for regular form elements
@@ -68,6 +55,20 @@ app.get("/getKey", (req, res) => {
 	let returnObject = JSON.stringify({ ROOT_URL, API_KEY });
 	res.send(returnObject);
 })
+
+//use routes above webpack middleware
+if (process.env.NODE_ENV !== 'production') {
+	const webpack = require('webpack');
+	const webpackDevMiddleware = require('webpack-dev-middleware');
+	const config = require('./webpack.config.js');
+	const compiler = webpack(config);
+
+	app.use(webpackDevMiddleware(compiler, {
+		publicPath: config.output.publicPath
+	}));
+} else {
+	app.use(express.static(__dirname + "/dist"));
+}
 
 const port = process.env.PORT || 8000;
 console.log('listening on port ', port);

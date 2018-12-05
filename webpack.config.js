@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 let pathsToClean = ['dist'];
 // let cleanOptions = { exclude:  ['styles'] };
@@ -22,9 +23,10 @@ let htmlFiles = [
 ]
 
 let htmlWebPackPluginArray = [];
+// let cssPlugins = [];
 for(let elem of htmlFiles) {
 	let filename = `pages/${elem}.html`;
-	let template = `src/pages/${elem}.html`
+	let template = `src/pages/${elem}.html`;
 	htmlWebPackPluginArray.push( new HtmlWebpackPlugin({ filename, template }) );
 }
 
@@ -50,12 +52,22 @@ module.exports = {
 	mode: 'development',
   module: {
     rules: [
+			{
+				test: /\.png$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							outputPath: 'images/'
+						}
+					}
+				]
+			},
       {
         test: /\.css$/,
         use: [
-          { loader: 'style-loader' },
-					// , options: { sourceMap: true, convertToAbsoluteUrls: true } },
-					{ loader: 'css-loader'}
+          'style-loader', 'css-loader'
         ]
       }
     ]

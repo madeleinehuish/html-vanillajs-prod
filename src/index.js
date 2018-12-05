@@ -1,5 +1,6 @@
 require('./js/dropdown');
-
+import './styles/style.css';
+import './images/ganesh_favicon.png';
 
 let table = document.getElementById('tableId');
 let tableBody = document.getElementById('tableBody');

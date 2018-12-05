@@ -1,5 +1,6 @@
 let listDataDefault = ['Madeleine', 'Audrey', 'Alicia', 'Sera', 'Julie', 'Bethany', 'Betty','Rachel', 'Colleen', 'Piper', 'Gabbie', 'Hanna', 'Danny',
 'Persephone', ];
+import '../styles/style.css';
 
 let listContainer = document.getElementById('list-container');
 

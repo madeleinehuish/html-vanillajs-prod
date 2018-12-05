@@ -3,6 +3,7 @@ const pokeDiv = document.getElementById('pokemonDiv');
 const pokeSearch = document.getElementById('pokeSearch');
 const pokeSearchInput = document.getElementById('pokeSearchInput');
 const buttonMessage = document.getElementById('buttonMessage');
+import '../styles/style.css';
 
 let defaultPokeData = [];
 let currentPokeData = [];

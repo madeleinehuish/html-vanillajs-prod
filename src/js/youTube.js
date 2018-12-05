@@ -8,6 +8,7 @@ const videoListDiv = document.getElementById('videoList');
 const mainVidScreen = document.getElementById('mainVidScreen');
 const vidButton = document.getElementById('vidButton');
 const body = document.body;
+import '../styles/style.css';
 
 let videoQueue = [];
 

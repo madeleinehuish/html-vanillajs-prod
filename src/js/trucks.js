@@ -1,3 +1,5 @@
+import '../styles/style.css';
+
 //get current date and time
 const date = new Date();
 const day = date.getDay();

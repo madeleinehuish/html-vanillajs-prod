@@ -6,6 +6,7 @@ const getDataButton = document.getElementById('getDataButton');
 const startOverButton = document.getElementById('startOverButton');
 const modalButtonContainer = document.getElementById('openModalContainer');
 const getDataButtonContainer = document.getElementById('getDataButtonContainer');
+import '../styles/style.css';
 
 
 function modalButtonClick() {

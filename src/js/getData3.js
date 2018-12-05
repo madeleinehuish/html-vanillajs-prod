@@ -7,6 +7,7 @@ const todoListButton = document.getElementById('todoListButton');
 const modal = document.querySelector('.modal');
 const modalTrigger = document.getElementById('modalButton');
 const closeModalButton = document.querySelector('.close-modal-button');
+import '../styles/style.css';
 
 // console.log('closeModalButton', closeModalButton);
 
