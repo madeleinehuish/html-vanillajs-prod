@@ -1,23 +1,33 @@
 require('dotenv').config();
-
 const API_KEY = process.env.API_KEY;
 const ROOT_URL = process.env.ROOT_URL;
 
-const port = 8000;
+const path = require('path');
 const express = require("express");
 
 const app = express();
+
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
 const axios = require('axios');
+
+if (process.env.NODE_ENV !== 'production') {
+	const webpack = require('webpack');
+	const webpackDevMiddleware = require('webpack-dev-middleware');
+	const config = require('./webpack.config.js');
+	const compiler = webpack(config);
+
+	app.use(webpackDevMiddleware(compiler, {
+		publicPath: config.output.publicPath
+	}));
+} else {
+	app.use(express.static(__dirname + "/dist"));
+}
 
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true })); //need this for regular form elements
 app.use(bodyParser.json());
-
-app.use(express.static(__dirname + "/src/public")); //use static files in ROOT/src folder
 
 // app.use((req, res, next) => {
 //   res.header("Access-Control-Allow-Origin", "*");
@@ -59,5 +69,6 @@ app.get("/getKey", (req, res) => {
 	res.send(returnObject);
 })
 
+const port = process.env.PORT || 8000;
 console.log('listening on port ', port);
 app.listen(port);

@@ -20,7 +20,7 @@ const loadText = () => {
 	//create XHR Object
 	const xhr = new XMLHttpRequest();
 	//OPEN- type, url/file, async
-	xhr.open('GET', './sampleText.txt', true);
+	xhr.open('GET', '../styles/sampleText.txt', true);
 
 	// // // old way of doing things : onreadystatechange
 	// // // readyState values

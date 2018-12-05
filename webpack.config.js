@@ -3,7 +3,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let pathsToClean = ['dist'];
-let cleanOptions = { exclude:  ['styles'] };
+// let cleanOptions = { exclude:  ['styles'] };
+let cleanOptions = {};
 
 let htmlFiles = [
 	'lists',
@@ -24,15 +25,16 @@ let htmlWebPackPluginArray = [];
 for(let elem of htmlFiles) {
 	let filename = `pages/${elem}.html`;
 	let template = `src/pages/${elem}.html`
-	htmlWebPackPluginArray.push( new HtmlWebpackPlugin({ filename, template, chunks: ['main'] }) );
+	htmlWebPackPluginArray.push( new HtmlWebpackPlugin({ filename, template }) );
 }
 
 module.exports = {
 	entry: {
-		home: './src/index.js',
+		index: './src/index.js',
 		dropdown: './src/js/dropdown.js',
 		getData: './src/js/getData.js',
-		getData2: './src/js/getData3.js',
+		getData2: './src/js/getData2.js',
+		getData3: './src/js/getData3.js',
 		jqueryStuff: './src/js/jqueryStuff.js',
 		lists: './src/js/lists.js',
 		pokemon: './src/js/pokemon.js',
@@ -42,15 +44,18 @@ module.exports = {
 	},
 	output: {
 		filename: 'js/[name].bundle.js',
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, 'dist'),
+		publicPath: '/'
 	},
+	mode: 'development',
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader'
+          { loader: 'style-loader' },
+					// , options: { sourceMap: true, convertToAbsoluteUrls: true } },
+					{ loader: 'css-loader'}
         ]
       }
     ]
