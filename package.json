@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "build": "webpack --config webpack.config.js --mode development"
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "keywords": [],
   "author": "Madeleine Huish <madeleinehuish@gmail.com>",
