@@ -1,3 +1,5 @@
+import '../styles/style.css';
+
 //new dropdown allows for multiple drop downs by selecting previous Sibling
 const dropDownTrigger = document.querySelectorAll('.dropDownTrigger');
 

@@ -12,6 +12,7 @@ let htmlFiles = [
 	'lists2',
 	'lists3',
 	'lists4',
+	'forms',
 	'forms2',
 	'forms3',
 	'getData',
@@ -23,7 +24,6 @@ let htmlFiles = [
 ]
 
 let htmlWebPackPluginArray = [];
-// let cssPlugins = [];
 for(let elem of htmlFiles) {
 	let filename = `pages/${elem}.html`;
 	let template = `src/pages/${elem}.html`;
@@ -37,7 +37,6 @@ module.exports = {
 		getData: './src/js/getData.js',
 		getData2: './src/js/getData2.js',
 		getData3: './src/js/getData3.js',
-		jqueryStuff: './src/js/jqueryStuff.js',
 		lists: './src/js/lists.js',
 		pokemon: './src/js/pokemon.js',
 		time: './src/js/time.js',
